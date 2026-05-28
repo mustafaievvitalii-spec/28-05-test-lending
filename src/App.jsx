@@ -1,8 +1,30 @@
+import { useRef } from 'react';
+
 function App() {
+  const heroVideoRef = useRef(null);
+
+  const handleVideoEnded = () => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    const finalFrameTime = Math.max(0, video.duration - 0.04);
+    video.currentTime = finalFrameTime;
+    video.pause();
+  };
+
   return (
     <div className="page">
       <header className="hero" id="top">
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+        <video
+          ref={heroVideoRef}
+          className="hero-video"
+          autoPlay
+          muted
+          playsInline
+          preload="metadata"
+          onEnded={handleVideoEnded}
+          aria-hidden="true"
+        >
           <source src="/videos/hero-car.mp4" type="video/mp4" />
         </video>
         <div className="hero-fallback" aria-hidden="true" />
