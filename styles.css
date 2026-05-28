@@ -1,0 +1,177 @@
+:root {
+  --bg: #090909;
+  --bg-alt: #111216;
+  --card: #16171d;
+  --text: #efeff2;
+  --muted: #b8bcc7;
+  --accent: #d40f28;
+  --accent-2: #ff2d43;
+  --radius: 1rem;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container { width: min(1120px, 92vw); margin-inline: auto; }
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  background: linear-gradient(180deg, #080808 0%, #121212 100%);
+  overflow: clip;
+}
+
+.hero__video-wrap,
+.hero__video,
+.hero__overlay,
+.hero__fallback {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__fallback {
+  background: radial-gradient(circle at 20% 30%, #2b2b2b 0%, #111 50%, #080808 100%);
+  z-index: -1;
+}
+
+.hero__overlay {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.78) 15%, rgba(0, 0, 0, 0.45) 60%, rgba(0, 0, 0, 0.8) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 80%);
+}
+
+.nav {
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.brand { letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase; }
+
+.nav__cta {
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid #fff3;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+}
+
+.hero__content {
+  z-index: 2;
+  padding: 3rem 0 6rem;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(1.2rem);
+}
+
+.hero__content.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.eyebrow { color: var(--accent-2); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+h1 { font-size: clamp(2rem, 7vw, 4.7rem); line-height: 1.1; margin: 0.2rem 0 0.8rem; }
+.subheadline { color: var(--muted); max-width: 60ch; margin-bottom: 1.6rem; }
+.hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.85rem 1.25rem;
+  border-radius: 0.7rem;
+  font-weight: 600;
+}
+.btn--primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; border: 0; }
+.btn--ghost { border: 1px solid #fff5; color: #fff; }
+
+.section { padding: 5rem 0; }
+.section--alt { background: var(--bg-alt); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 0 0 1.6rem; }
+.grid { display: grid; gap: 1rem; }
+.cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card {
+  background: linear-gradient(160deg, #1a1b22, #13141a);
+  border: 1px solid #ffffff10;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+}
+
+.before-after { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.panel {
+  min-height: 240px;
+  border-radius: var(--radius);
+  background: linear-gradient(130deg, #2b2f37, #12131a);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+}
+.panel--after { background: linear-gradient(130deg, #4f0b15, #181920); }
+
+.reviews { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.review {
+  margin: 0;
+  background: #181921;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem;
+  color: #d7d9e0;
+}
+
+.faq details {
+  background: #15161c;
+  padding: 1rem 1.2rem;
+  border-radius: 0.8rem;
+  border: 1px solid #ffffff12;
+  margin-bottom: 0.8rem;
+}
+.faq summary { cursor: pointer; font-weight: 600; }
+
+.section--contact { background: linear-gradient(180deg, #100d10, #070708); }
+.lead-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.lead-form label { display: grid; gap: 0.4rem; color: #d2d5df; }
+.lead-form input,
+.lead-form textarea {
+  background: #0e0f14;
+  border: 1px solid #ffffff1f;
+  border-radius: 0.65rem;
+  color: #fff;
+  padding: 0.75rem;
+}
+.lead-form label:last-of-type,
+.lead-form button { grid-column: 1 / -1; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .before-after { grid-template-columns: 1fr; }
+}
