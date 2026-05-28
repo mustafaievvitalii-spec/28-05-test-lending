@@ -1,15 +1,25 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 function App() {
   const heroVideoRef = useRef(null);
+  const finalFrameTimeRef = useRef(0);
+  const [isHeroVideoFinished, setIsHeroVideoFinished] = useState(false);
+
+  const handleVideoMetadataLoaded = () => {
+    const video = heroVideoRef.current;
+    if (!video || !Number.isFinite(video.duration)) return;
+
+    finalFrameTimeRef.current = Math.max(0, video.duration - 0.08);
+  };
 
   const handleVideoEnded = () => {
     const video = heroVideoRef.current;
     if (!video) return;
 
-    const finalFrameTime = Math.max(0, video.duration - 0.04);
+    const finalFrameTime = finalFrameTimeRef.current || Math.max(0, video.duration - 0.08);
     video.currentTime = finalFrameTime;
     video.pause();
+    setIsHeroVideoFinished(true);
   };
 
   return (
@@ -17,11 +27,12 @@ function App() {
       <header className="hero" id="top">
         <video
           ref={heroVideoRef}
-          className="hero-video"
+          className={`hero-video${isHeroVideoFinished ? ' hero-video--finished' : ''}`}
           autoPlay
           muted
           playsInline
           preload="metadata"
+          onLoadedMetadata={handleVideoMetadataLoaded}
           onEnded={handleVideoEnded}
           aria-hidden="true"
         >
