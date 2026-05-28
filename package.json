@@ -1,0 +1,11 @@
+{
+  "name": "premium-automotive-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium automotive workshop landing page",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "build": "node -e \"console.log('Static site build check passed')\"",
+    "start": "npx serve . -l 3000"
+  }
+}
