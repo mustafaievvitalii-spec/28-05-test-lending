@@ -60,6 +60,8 @@ const reviews = [
   }
 ];
 
+const HERO_VIDEO_PLAYBACK_RATE = 1.5;
+
 const faqs = [
   ['How long does diagnostics take?', 'Most diagnostic sessions take 60–90 minutes and include a clear digital report before repairs begin.'],
   ['Do you support performance builds?', 'Yes. We plan staged upgrades around reliability, thermal management, and measurable performance goals.'],
@@ -110,6 +112,8 @@ function App() {
     const video = heroVideoRef.current;
     if (!video || !Number.isFinite(video.duration)) return;
 
+    video.defaultPlaybackRate = HERO_VIDEO_PLAYBACK_RATE;
+    video.playbackRate = HERO_VIDEO_PLAYBACK_RATE;
     finalFrameTimeRef.current = Math.max(0, video.duration - 0.08);
   };
 
