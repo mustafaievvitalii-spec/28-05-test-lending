@@ -51,9 +51,7 @@ button, input, textarea { font: inherit; }
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  filter: contrast(1.14) saturate(1.12) brightness(1.14);
-  transform: translate3d(0, calc(var(--scroll-y, 0) * .03px), 0);
-  will-change: transform;
+  filter: contrast(1.05) saturate(1.04) brightness(1.04);
 }
 .hero-fallback { background: radial-gradient(circle at 22% 30%, #30323d 0%, #121217 54%, #060607 100%); z-index: -2; }
 .hero-overlay {
@@ -232,9 +230,9 @@ h2 { font-size: clamp(2rem, 4.5vw, 3.35rem); line-height: 1; letter-spacing: -.0
 
 @media (min-width: 1024px) {
   .hero-content {
-    margin-left: -2.8rem;
-    padding-top: 1.3rem;
-    padding-bottom: 11rem;
+    margin-left: -0.75rem;
+    padding-top: 2.4rem;
+    padding-bottom: 8.8rem;
   }
 }
 
@@ -248,7 +246,7 @@ h2 { font-size: clamp(2rem, 4.5vw, 3.35rem); line-height: 1; letter-spacing: -.0
 @media (max-width: 640px) {
   .cursor-light { display: none; }
   .hero-content { padding-bottom: 4.5rem; }
-  .hero-video { object-position: 52% 50%; transform: none; }
+  .hero-video { object-position: center center; }
   .brand { font-size: .78rem; }
   .nav-btn { padding: .5rem .8rem; }
   .lead-form { grid-template-columns: 1fr; }
