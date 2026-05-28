@@ -1,11 +1,19 @@
 {
-  "name": "premium-automotive-landing",
-  "version": "1.0.0",
+  "name": "premium-automotive-workshop",
   "private": true,
-  "description": "Premium automotive workshop landing page",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "npx serve . -l 3000",
-    "build": "node -e \"console.log('Static site build check passed')\"",
-    "start": "npx serve . -l 3000"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10",
+    "@vitejs/plugin-react": "^4.3.3"
   }
 }

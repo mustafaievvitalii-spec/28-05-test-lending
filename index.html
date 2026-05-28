@@ -1,120 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium Automotive Workshop</title>
-  <link rel="preload" href="public/videos/hero-car.mp4" as="video" type="video/mp4" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="hero" id="top">
-    <div class="hero__video-wrap" aria-hidden="true">
-      <video
-        class="hero__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster=""
-      >
-        <source src="public/videos/hero-car.mp4" type="video/mp4" />
-      </video>
-      <div class="hero__overlay"></div>
-      <div class="hero__fallback"></div>
-    </div>
-
-    <nav class="nav container">
-      <div class="brand">Apex Motor Atelier</div>
-      <a href="#contact" class="nav__cta">Book now</a>
-    </nav>
-
-    <div class="hero__content container" id="hero-content">
-      <p class="eyebrow">Elite Garage & Tuning Studio</p>
-      <h1>Premium Automotive Workshop</h1>
-      <p class="subheadline">Professional diagnostics, repair, tuning and restoration for modern vehicles.</p>
-      <div class="hero__actions">
-        <a href="#contact" class="btn btn--primary">Book a consultation</a>
-        <a href="#services" class="btn btn--ghost">View services</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="section" id="services">
-      <div class="container">
-        <h2>Services</h2>
-        <div class="grid cards">
-          <article class="card">Diagnostics</article>
-          <article class="card">Engine repair</article>
-          <article class="card">Suspension repair</article>
-          <article class="card">Body work</article>
-          <article class="card">Detailing</article>
-          <article class="card">Performance tuning</article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="why-us">
-      <div class="container">
-        <h2>Why choose us</h2>
-        <div class="grid cards">
-          <article class="card">Professional equipment</article>
-          <article class="card">Experienced mechanics</article>
-          <article class="card">Transparent pricing</article>
-          <article class="card">Premium service</article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="before-after">
-      <div class="container">
-        <h2>Before / After</h2>
-        <div class="before-after">
-          <div class="panel"><span>Before</span></div>
-          <div class="panel panel--after"><span>After</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="reviews">
-      <div class="container">
-        <h2>Customer reviews</h2>
-        <div class="grid reviews">
-          <blockquote class="review">“Outstanding precision and communication. My car drives better than new.”</blockquote>
-          <blockquote class="review">“The cleanest workshop and most transparent diagnostics report I’ve seen.”</blockquote>
-          <blockquote class="review">“From restoration to tuning, the craftsmanship is top-tier.”</blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <details><summary>How long does diagnostics take?</summary><p>Most diagnostics are completed within 60–90 minutes with a full digital report.</p></details>
-          <details><summary>Do you service premium brands?</summary><p>Yes, we specialize in European, Japanese, and high-performance vehicles.</p></details>
-          <details><summary>Can I request staged tuning upgrades?</summary><p>Absolutely. We design staged plans with reliability and performance targets.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--contact" id="contact">
-      <div class="container">
-        <h2>Book your consultation</h2>
-        <form class="lead-form">
-          <label>Name<input type="text" name="name" required /></label>
-          <label>Phone number<input type="tel" name="phone" required /></label>
-          <label>Car model<input type="text" name="car-model" required /></label>
-          <label>Service needed<input type="text" name="service-needed" required /></label>
-          <label>Message<textarea name="message" rows="4" required></textarea></label>
-          <button type="submit" class="btn btn--primary">Submit request</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Automotive Workshop</title>
+    <meta name="description" content="Professional diagnostics, repair, tuning and restoration for modern vehicles." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
